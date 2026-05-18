@@ -1,0 +1,19 @@
+import { emailLayout } from "./layout.js";
+
+export const endingSoonTemplate = ({ productName, currentBid, remainingTime, auctionLink }) => {
+  const content = `
+    <h2>Action Required: Auction Ending Soon!</h2>
+    <p>The auction for <span class="highlight">${productName}</span> is ending in exactly ${remainingTime}.</p>
+    
+    <div class="details-box">
+      <p><strong>Current Highest Bid:</strong> Rs. ${currentBid}</p>
+    </div>
+
+    <p>If you want to secure this item, make sure to place your final bids now!</p>
+    
+    <center>
+      <a href="${auctionLink}" class="btn">Go to Auction</a>
+    </center>
+  `;
+  return emailLayout(content);
+};

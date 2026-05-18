@@ -1,0 +1,92 @@
+export const emailLayout = (content) => `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BidSphere Notification</title>
+  <style>
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f4f7f6;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      padding: 30px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .content {
+      padding: 40px 30px;
+      line-height: 1.6;
+      font-size: 16px;
+      color: #4a4a4a;
+    }
+    .footer {
+      background-color: #f8f9fa;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      border-top: 1px solid #eaeaea;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background-color: #d4af37;
+      color: #fff !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .highlight {
+      color: #2a5298;
+      font-weight: 600;
+    }
+    .details-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #d4af37;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 4px;
+    }
+    .details-box p {
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>BidSphere</h1>
+    </div>
+    <div class="content">
+      ${content}
+    </div>
+    <div class="footer">
+      <p>&copy; ${new Date().getFullYear()} BidSphere. All rights reserved.</p>
+      <p>This is an automated message, please do not reply directly to this email.</p>
+    </div>
+  </div>
+</body>
+</html>
+`;

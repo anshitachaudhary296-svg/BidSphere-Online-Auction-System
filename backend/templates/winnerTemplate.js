@@ -1,0 +1,23 @@
+import { emailLayout } from "./layout.js";
+
+export const winnerTemplate = ({ winnerName, productName, winningAmount, sellerEmail, sellerPaymentMethods }) => {
+  const content = `
+    <h2>Congratulations ${winnerName}!</h2>
+    <p>You have successfully won the auction for <span class="highlight">${productName}</span>.</p>
+    
+    <div class="details-box">
+      <p><strong>Winning Amount:</strong> Rs. ${winningAmount}</p>
+      <p><strong>Seller Contact:</strong> ${sellerEmail}</p>
+    </div>
+
+    <h3>Payment Instructions:</h3>
+    <p>Please complete your payment using one of the following methods provided by the seller:</p>
+    
+    <div style="background-color: #f1f3f5; padding: 15px; border-radius: 5px; font-size: 14px;">
+      <pre style="white-space: pre-wrap; font-family: inherit;">${sellerPaymentMethods}</pre>
+    </div>
+
+    <p>Please contact the seller at the email provided above to finalize the transaction and delivery details.</p>
+  `;
+  return emailLayout(content);
+};
