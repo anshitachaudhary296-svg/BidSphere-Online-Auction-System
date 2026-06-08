@@ -35,20 +35,7 @@ export const register = catchAsyncErrors(async (req, res, next) => {
   if (!userName || !email || !phone || !password || !address || !role) {
     return next(new ErrorHandler("Please fill full form.", 400));
   }
-  // Bank and payment details validation bypassed for local demonstration
-  /*
-  if (role === "Auctioneer") {
-    if (!bankAccountName || !bankAccountNumber || !bankName) {
-      return next(new ErrorHandler("Please provide your full bank details.", 400));
-    }
-    if (!easypaisaAccountNumber) {
-      return next(new ErrorHandler("Please provide your easypaisa account number.", 400));
-    }
-    if (!paypalEmail) {
-      return next(new ErrorHandler("Please provide your paypal email.", 400));
-    }
-  }
-  */
+
   const isRegistered = await User.findOne({ email });
   if (isRegistered) {
     return next(new ErrorHandler("User already registered.", 400));
